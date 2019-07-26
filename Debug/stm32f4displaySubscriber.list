@@ -7,15 +7,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000071ac  080001ac  080001ac  000101ac  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000024dc  08007358  08007358  00017358  2**0
+  2 .rodata       000024d8  08007358  08007358  00017358  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM          00000008  08009834  08009834  00019834  2**2
+  3 .ARM          00000008  08009830  08009830  00019830  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .init_array   00000004  0800983c  0800983c  0001983c  2**2
+  4 .init_array   00000004  08009838  08009838  00019838  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .fini_array   00000004  08009840  08009840  00019840  2**2
+  5 .fini_array   00000004  0800983c  0800983c  0001983c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .data         000000dc  20000000  08009844  00020000  2**2
+  6 .data         000000dc  20000000  08009840  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .ccmram       00000000  10000000  10000000  000200dc  2**0
                   CONTENTS
@@ -7140,7 +7140,7 @@ __weak HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruc
  8002e82:	bf00      	nop
  8002e84:	40023c00 	.word	0x40023c00
  8002e88:	40023800 	.word	0x40023800
- 8002e8c:	08009815 	.word	0x08009815
+ 8002e8c:	0800980e 	.word	0x0800980e
  8002e90:	20000074 	.word	0x20000074
 
 08002e94 <HAL_RCC_GetPCLK1Freq>:
@@ -7161,7 +7161,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8002ea4:	40d8      	lsrs	r0, r3
  8002ea6:	4770      	bx	lr
  8002ea8:	40023800 	.word	0x40023800
- 8002eac:	08009825 	.word	0x08009825
+ 8002eac:	0800981e 	.word	0x0800981e
  8002eb0:	20000074 	.word	0x20000074
 
 08002eb4 <HAL_RCC_GetPCLK2Freq>:
@@ -7182,7 +7182,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8002ec4:	40d8      	lsrs	r0, r3
  8002ec6:	4770      	bx	lr
  8002ec8:	40023800 	.word	0x40023800
- 8002ecc:	08009825 	.word	0x08009825
+ 8002ecc:	0800981e 	.word	0x0800981e
  8002ed0:	20000074 	.word	0x20000074
 
 08002ed4 <HAL_RCC_GetClockConfig>:
@@ -15723,7 +15723,7 @@ void sanitizeLinBuff(char* linBuff, int size)
  80060ea:	782b      	ldrb	r3, [r5, #0]
  80060ec:	2b00      	cmp	r3, #0
  80060ee:	f47f aee0 	bne.w	8005eb2 <main+0x47a>
-          connectToWifi("testespap", "phumiphat123");
+          connectToWifi("lungtu", "12345678");
  80060f2:	4985      	ldr	r1, [pc, #532]	; (8006308 <main+0x8d0>)
  80060f4:	4885      	ldr	r0, [pc, #532]	; (800630c <main+0x8d4>)
  80060f6:	f7ff faef 	bl	80056d8 <connectToWifi>
@@ -15835,8 +15835,8 @@ void sanitizeLinBuff(char* linBuff, int size)
  80061c0:	781b      	ldrb	r3, [r3, #0]
  80061c2:	2b00      	cmp	r3, #0
  80061c4:	f43f ae75 	beq.w	8005eb2 <main+0x47a>
-          HAL_Delay(1000);
- 80061c8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+          HAL_Delay(2500);
+ 80061c8:	f640 10c4 	movw	r0, #2500	; 0x9c4
  80061cc:	f7fb f86a 	bl	80012a4 <HAL_Delay>
           connectToTCP("postman.cloudmqtt.com", "16001", "7200");
  80061d0:	4a5b      	ldr	r2, [pc, #364]	; (8006340 <main+0x908>)
@@ -16013,7 +16013,7 @@ void sanitizeLinBuff(char* linBuff, int size)
  8006300:	080095da 	.word	0x080095da
  8006304:	200005a4 	.word	0x200005a4
  8006308:	08009669 	.word	0x08009669
- 800630c:	08009676 	.word	0x08009676
+ 800630c:	08009672 	.word	0x08009672
  8006310:	080095f8 	.word	0x080095f8
  8006314:	08009601 	.word	0x08009601
  8006318:	0800961b 	.word	0x0800961b
@@ -16021,25 +16021,25 @@ void sanitizeLinBuff(char* linBuff, int size)
  8006320:	08009643 	.word	0x08009643
  8006324:	0800964c 	.word	0x0800964c
  8006328:	08009546 	.word	0x08009546
- 800632c:	08009680 	.word	0x08009680
+ 800632c:	08009679 	.word	0x08009679
  8006330:	200002a7 	.word	0x200002a7
- 8006334:	080096a2 	.word	0x080096a2
+ 8006334:	0800969b 	.word	0x0800969b
  8006338:	200002b0 	.word	0x200002b0
  800633c:	200002b2 	.word	0x200002b2
- 8006340:	080096b0 	.word	0x080096b0
- 8006344:	080096b5 	.word	0x080096b5
- 8006348:	080096bb 	.word	0x080096bb
+ 8006340:	080096a9 	.word	0x080096a9
+ 8006344:	080096ae 	.word	0x080096ae
+ 8006348:	080096b4 	.word	0x080096b4
  800634c:	0800747c 	.word	0x0800747c
  8006350:	200002a8 	.word	0x200002a8
- 8006354:	080096d1 	.word	0x080096d1
- 8006358:	080096e8 	.word	0x080096e8
- 800635c:	08009708 	.word	0x08009708
+ 8006354:	080096ca 	.word	0x080096ca
+ 8006358:	080096e1 	.word	0x080096e1
+ 800635c:	08009701 	.word	0x08009701
  8006360:	200002ac 	.word	0x200002ac
  8006364:	08007480 	.word	0x08007480
- 8006368:	08009750 	.word	0x08009750
- 800636c:	08009731 	.word	0x08009731
- 8006370:	08009753 	.word	0x08009753
- 8006374:	08009756 	.word	0x08009756
+ 8006368:	08009749 	.word	0x08009749
+ 800636c:	0800972a 	.word	0x0800972a
+ 8006370:	0800974c 	.word	0x0800974c
+ 8006374:	0800974f 	.word	0x0800974f
  8006378:	200002a5 	.word	0x200002a5
         char mqttSuccessSubscribe[] = { 0x90, 0x03, 0x00, 0x01, 0x01 };
  800637c:	4b96      	ldr	r3, [pc, #600]	; (80065d8 <main+0xba0>)
@@ -16228,10 +16228,10 @@ void sanitizeLinBuff(char* linBuff, int size)
  80064bc:	e79d      	b.n	80063fa <main+0x9c2>
               HAL_UART_Transmit(&huart1, (uint8_t*) &linBuff[i], 1, 100);
  80064be:	f8df 8124 	ldr.w	r8, [pc, #292]	; 80065e4 <main+0xbac>
-                lcdDataBuff[i-position-3] = linBuff[i]; // add UID to lcd data buffer
+                lcdDataBuff[i-position-5] = linBuff[i]; // add UID to lcd data buffer
  80064c2:	f8df 914c 	ldr.w	r9, [pc, #332]	; 8006610 <main+0xbd8>
-            for (int i = position + 3; i < 100; ++i) {
- 80064c6:	1cfd      	adds	r5, r7, #3
+            for (int i = position + 5; i < 100; ++i) {
+ 80064c6:	1d7d      	adds	r5, r7, #5
  80064c8:	2d63      	cmp	r5, #99	; 0x63
  80064ca:	dcc6      	bgt.n	800645a <main+0xa22>
               HAL_UART_Transmit(&huart1, (uint8_t*) &linBuff[i], 1, 100);
@@ -16243,15 +16243,15 @@ void sanitizeLinBuff(char* linBuff, int size)
               if (!(linBuff[i] == ' ')) {
  80064d8:	5d62      	ldrb	r2, [r4, r5]
  80064da:	2a20      	cmp	r2, #32
-                lcdDataBuff[i-position-3] = linBuff[i]; // add UID to lcd data buffer
+                lcdDataBuff[i-position-5] = linBuff[i]; // add UID to lcd data buffer
  80064dc:	bf1c      	itt	ne
  80064de:	1beb      	subne	r3, r5, r7
  80064e0:	444b      	addne	r3, r9
-            for (int i = position + 3; i < 100; ++i) {
+            for (int i = position + 5; i < 100; ++i) {
  80064e2:	f105 0501 	add.w	r5, r5, #1
-                lcdDataBuff[i-position-3] = linBuff[i]; // add UID to lcd data buffer
+                lcdDataBuff[i-position-5] = linBuff[i]; // add UID to lcd data buffer
  80064e6:	bf18      	it	ne
- 80064e8:	f803 2c03 	strbne.w	r2, [r3, #-3]
+ 80064e8:	f803 2c05 	strbne.w	r2, [r3, #-5]
  80064ec:	e7ec      	b.n	80064c8 <main+0xa90>
           else if (lcdDataBuff[0] == '2') {
  80064ee:	2b32      	cmp	r3, #50	; 0x32
@@ -16381,27 +16381,27 @@ void sanitizeLinBuff(char* linBuff, int size)
  80065d6:	bf00      	nop
  80065d8:	080074a9 	.word	0x080074a9
  80065dc:	200002a8 	.word	0x200002a8
- 80065e0:	08009782 	.word	0x08009782
+ 80065e0:	0800977b 	.word	0x0800977b
  80065e4:	200005a4 	.word	0x200005a4
  80065e8:	200002a6 	.word	0x200002a6
  80065ec:	40020000 	.word	0x40020000
- 80065f0:	080097ad 	.word	0x080097ad
- 80065f4:	080097bc 	.word	0x080097bc
+ 80065f0:	080097a6 	.word	0x080097a6
+ 80065f4:	080097b5 	.word	0x080097b5
  80065f8:	200002ac 	.word	0x200002ac
  80065fc:	080074ae 	.word	0x080074ae
- 8006600:	080097fc 	.word	0x080097fc
- 8006604:	080097c4 	.word	0x080097c4
- 8006608:	080097ca 	.word	0x080097ca
+ 8006600:	080097f5 	.word	0x080097f5
+ 8006604:	080097bd 	.word	0x080097bd
+ 8006608:	080097c3 	.word	0x080097c3
  800660c:	08009443 	.word	0x08009443
  8006610:	20000644 	.word	0x20000644
- 8006614:	080097ce 	.word	0x080097ce
- 8006618:	080097d8 	.word	0x080097d8
- 800661c:	080097e2 	.word	0x080097e2
- 8006620:	080097eb 	.word	0x080097eb
- 8006624:	080097f3 	.word	0x080097f3
- 8006628:	08009753 	.word	0x08009753
+ 8006614:	080097c7 	.word	0x080097c7
+ 8006618:	080097d1 	.word	0x080097d1
+ 800661c:	080097db 	.word	0x080097db
+ 8006620:	080097e4 	.word	0x080097e4
+ 8006624:	080097ec 	.word	0x080097ec
+ 8006628:	0800974c 	.word	0x0800974c
  800662c:	200002a4 	.word	0x200002a4
- 8006630:	080097ff 	.word	0x080097ff
+ 8006630:	080097f8 	.word	0x080097f8
  8006634:	200002b0 	.word	0x200002b0
 
 08006638 <HAL_TIM_PeriodElapsedCallback>:
@@ -18313,7 +18313,7 @@ USBH_StatusTypeDef USBH_LL_Start(USBH_HandleTypeDef *phost)
 }
  8006f5c:	bd08      	pop	{r3, pc}
  8006f5e:	bf00      	nop
- 8006f60:	08009830 	.word	0x08009830
+ 8006f60:	08009829 	.word	0x08009829
 
 08006f64 <USBH_LL_Stop>:
   * @brief  Stop the low level portion of the host driver.
@@ -18341,7 +18341,7 @@ USBH_StatusTypeDef USBH_LL_Stop(USBH_HandleTypeDef *phost)
 }
  8006f78:	bd08      	pop	{r3, pc}
  8006f7a:	bf00      	nop
- 8006f7c:	08009830 	.word	0x08009830
+ 8006f7c:	08009829 	.word	0x08009829
 
 08006f80 <USBH_LL_GetSpeed>:
   * @brief  Return the USB host speed from the low level driver.
@@ -18369,7 +18369,7 @@ USBH_SpeedTypeDef USBH_LL_GetSpeed(USBH_HandleTypeDef *phost)
 }
  8006f94:	bd08      	pop	{r3, pc}
  8006f96:	bf00      	nop
- 8006f98:	0800982d 	.word	0x0800982d
+ 8006f98:	08009826 	.word	0x08009826
 
 08006f9c <USBH_LL_ResetPort>:
   * @brief  Reset the Host port of the low level driver.
@@ -18397,7 +18397,7 @@ USBH_StatusTypeDef USBH_LL_ResetPort(USBH_HandleTypeDef *phost)
 }
  8006fb0:	bd08      	pop	{r3, pc}
  8006fb2:	bf00      	nop
- 8006fb4:	08009830 	.word	0x08009830
+ 8006fb4:	08009829 	.word	0x08009829
 
 08006fb8 <USBH_LL_GetLastXferSize>:
   * @param  pipe: Pipe index
@@ -18443,7 +18443,7 @@ USBH_StatusTypeDef USBH_LL_OpenPipe(USBH_HandleTypeDef *phost, uint8_t pipe_num,
  8006fe6:	b004      	add	sp, #16
  8006fe8:	bd10      	pop	{r4, pc}
  8006fea:	bf00      	nop
- 8006fec:	08009830 	.word	0x08009830
+ 8006fec:	08009829 	.word	0x08009829
 
 08006ff0 <USBH_LL_ClosePipe>:
   * @param  phost: Host handle
@@ -18471,7 +18471,7 @@ USBH_StatusTypeDef USBH_LL_ClosePipe(USBH_HandleTypeDef *phost, uint8_t pipe)
 }
  8007004:	bd08      	pop	{r3, pc}
  8007006:	bf00      	nop
- 8007008:	08009830 	.word	0x08009830
+ 8007008:	08009829 	.word	0x08009829
 
 0800700c <USBH_LL_SubmitURB>:
   * @retval Status
@@ -18509,7 +18509,7 @@ USBH_StatusTypeDef USBH_LL_SubmitURB(USBH_HandleTypeDef *phost, uint8_t pipe, ui
  8007036:	b004      	add	sp, #16
  8007038:	bd10      	pop	{r4, pc}
  800703a:	bf00      	nop
- 800703c:	08009830 	.word	0x08009830
+ 800703c:	08009829 	.word	0x08009829
 
 08007040 <USBH_LL_GetURBState>:
   *            @arg URB_ERROR
@@ -18679,7 +18679,7 @@ LoopFillZerobss:
   ldr   sp, =_estack       /* set stack pointer */
  80070d0:	20030000 	.word	0x20030000
   ldr  r3, =_sidata
- 80070d4:	08009844 	.word	0x08009844
+ 80070d4:	08009840 	.word	0x08009840
   ldr  r0, =_sdata
  80070d8:	20000000 	.word	0x20000000
   ldr  r3, =_edata
@@ -18732,10 +18732,10 @@ Infinite_Loop:
  800712a:	4798      	blx	r3
  800712c:	3501      	adds	r5, #1
  800712e:	e7f2      	b.n	8007116 <__libc_init_array+0x1e>
- 8007130:	0800983c 	.word	0x0800983c
- 8007134:	0800983c 	.word	0x0800983c
- 8007138:	0800983c 	.word	0x0800983c
- 800713c:	08009840 	.word	0x08009840
+ 8007130:	08009838 	.word	0x08009838
+ 8007134:	08009838 	.word	0x08009838
+ 8007138:	08009838 	.word	0x08009838
+ 800713c:	0800983c 	.word	0x0800983c
 
 08007140 <malloc>:
  8007140:	4b02      	ldr	r3, [pc, #8]	; (800714c <malloc+0xc>)

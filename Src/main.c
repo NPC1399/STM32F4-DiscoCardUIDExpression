@@ -311,7 +311,7 @@ int main(void)
         
         // send command
         if (!commandSent) {
-          connectToWifi("testespap", "phumiphat123");
+          connectToWifi("lungtu", "12345678");
           
           // flags
           commandSent = true;
@@ -340,7 +340,7 @@ int main(void)
           }
 
         if (!commandSent && state == WIFI_CONNECTED && (publishReq || subscribeReq ||unsuccess)) {
-          HAL_Delay(1000);
+          HAL_Delay(2500);
           connectToTCP("postman.cloudmqtt.com", "16001", "7200");
           commandSent = true;
         }
@@ -391,14 +391,14 @@ int main(void)
         if (!commandSent && !mqttLogin) {
           // send login command
           char mqttLogin[] = { 0x10, 0x27, 0x00,0x04, 0x4D, 0x51, 0x54, 0x54, 0x04, 0xC2, 0x00, 0x3C, 0x00, 0x03,
-                              0x43, 0x4F, 0x50, 0x00, 0x08, 0x7A, 0x6C, 0x64, 0x62, 0x67, 0x6F, 0x79, 0x6D, 0x00,
+                              0x57, 0x54, 0x46, 0x00, 0x08, 0x7A, 0x6C, 0x64, 0x62, 0x67, 0x6F, 0x79, 0x6D, 0x00,
                               0x0C, 0x55, 0x6C, 0x6D, 0x58, 0x52, 0x46, 0x33, 0x42, 0x48, 0x39, 0x65, 0x4F};
           tcpSendDataRequest("41");
           tcpSendData(mqttLogin, 41);
           commandSent = true;
         }
       
-        break;
+        break  ;
 
       case QUIT_AP:
         if (strstr(linBuff, "OK")) {
@@ -461,11 +461,11 @@ int main(void)
           int position = ptrTopic - linBuff;
         
           if (ptrTopic) {
-            for (int i = position + 3; i < 100; ++i) {
+            for (int i = position + 5; i < 100; ++i) {
               HAL_UART_Transmit(&huart1, (uint8_t*) &linBuff[i], 1, 100);
 
               if (!(linBuff[i] == ' ')) {
-                lcdDataBuff[i-position-3] = linBuff[i]; // add UID to lcd data buffer
+                lcdDataBuff[i-position-5] = linBuff[i]; // add UID to lcd data buffer
               }
             }
           }
